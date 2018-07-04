@@ -1,0 +1,132 @@
+// ===============================================
+// Chat Sidebar
+// ===============================================
+.c-chat-sidebar {
+
+  position: fixed;
+  top: 70px;
+  left: 0;
+  bottom: 0;
+  height: 100%;
+  width: 240px;
+  // opacity: 0;
+  // transform: translate3d(calc(-100% - 48px),0,0);
+  transition: $transition-fast;
+  transition-property: opacity, transform;
+
+
+
+  // Container
+  // -----------------------------------------------
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
+    background-color: rgba($gc-black, .75);
+    border-right: 1px solid rgba($gc-true-white, .1);
+  }
+
+
+
+  // Group
+  // -----------------------------------------------
+  &-group {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    height: auto;
+    max-height: (24px + (48px * 3));
+
+    &:last-of-type {
+      flex: 1 1 auto;
+      max-height: auto;
+    }
+  }
+
+
+
+  // Header
+  // -----------------------------------------------
+  &-header {
+    display: flex;
+    align-items: center;
+    flex: 0 0 24px;
+    height: 24px;
+    font-size: 12px;
+    line-height: 1.25;
+    background-color: rgba($gc-true-black, .25);
+    border-top: 1px solid rgba($gc-true-white, .1);
+    border-bottom: 1px solid rgba($gc-true-black, .25);
+    cursor: pointer;
+    user-select: none;
+    transition: $transition-fast;
+
+    &:hover,
+    &.is-toggled {
+      background-color: rgba($gc-true-black, .5);
+    }
+
+    // Modifiers
+    @at-root .m-chat-sidebar-group-team & {
+      color: $gc-orange;
+    }
+
+    @at-root .m-chat-sidebar-group-group & {
+      color: $gc-lilac;
+    }
+
+    @at-root .m-chat-sidebar-group-friend & {
+      color: $gc-green;
+    }
+  }
+
+
+
+  // Icon
+  // -----------------------------------------------
+  &-icon {
+    flex: 0 0 48px;
+    width: 48px;
+    text-align: center;
+  }
+
+
+
+  // Title
+  // -----------------------------------------------
+  &-title {
+    flex: 1 1 auto;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+}
+
+
+
+
+// ===============================================
+// Avatar
+// ===============================================
+
+.c-avatar {
+
+  &-img {
+    border-radius: 50%;
+  }
+}
+
+.m-avatar {
+  // Size
+  // -----------------------------------------------
+  &-sm .c-avatar-img {
+    max-width: 32px;
+  }
+}

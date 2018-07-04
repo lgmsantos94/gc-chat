@@ -1,18 +1,10 @@
 // ===============================================
-// vendor
+// Vendor
 // ===============================================
 
-// @import "partials/vendor";
-
-// Easing Sass Functions
-// -----------------------------------------------
-
+@import "modules/vendor";
 @import "../../node_modules/easing-sass-function/src/easing-var";
 @import "../../node_modules/easing-sass-function/src/easing-function";
-
-// Simple Line Icons
-// -----------------------------------------------
-
 @import "../../node_modules/simple-line-icons/scss/simple-line-icons";
 
 
@@ -21,7 +13,7 @@
 // Settings
 // ===============================================
 
-@import "partials/variables";
+@import "modules/variables";
 
 
 
@@ -29,8 +21,8 @@
 // Base
 // ===============================================
 
-@import "partials/reset";
-@import "partials/base";
+@import "modules/reset";
+@import "modules/base";
 
 
 
@@ -38,4 +30,18 @@
 // Components
 // ===============================================
 
-@import "partials/chat-sidebar";
+@import "modules/avatar";
+@import "modules/badge";
+@import "modules/chat-sidebar";
+@import "modules/chat-toggle";
+@import "modules/chat-dock";
+@import "modules/chat-item";
+
+
+
+// ===============================================
+// Utilities
+// ===============================================
+
+@import "modules/animations";
+@import "modules/utilities";
