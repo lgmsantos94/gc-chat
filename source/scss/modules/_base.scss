@@ -1,0 +1,41 @@
+// -----------------------------------------------
+// Base
+// -----------------------------------------------
+
+
+
+body {
+  color: $gc-white;
+  font-size: $font-size-md;
+  font-family: $font-family-body;
+  line-height: $line-height-body;
+  background-color: $gc-black;
+
+  &.has-bg {
+    height: 4159px;
+    background-image: url("../img/gc_home_full.jpg");
+    background-position: center top;
+    background-repeat: no-repeat;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+  vertical-align: middle;
+  background-color: transparent;
+  border: 0;
+  border-radius: 0;
+
+  &:focus {
+    outline: none;
+  }
+}

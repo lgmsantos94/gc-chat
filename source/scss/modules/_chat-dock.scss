@@ -1,0 +1,34 @@
+// -----------------------------------------------
+// Chat Sidebar
+// -----------------------------------------------
+
+
+
+.chat-dock {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 2.6rem;
+  // display: none;
+
+
+
+  // Container
+  &__container {
+    display: flex;
+    align-items: flex-end;
+    height: 0;
+    transform: translateX(9.2rem);
+    transition: transform $transition-fast;
+  }
+
+
+  // States
+  @at-root .global-chat.is-active .chat-sidebar.is-open ~ & &__container {
+    transform: translateX(27.8rem);
+  }
+
+  // @at-root .global-chat.is-active & {
+  //   display: block;
+  // }
+}

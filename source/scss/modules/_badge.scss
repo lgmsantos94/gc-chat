@@ -1,0 +1,58 @@
+// ===============================================
+// Badge
+// ===============================================
+
+
+
+.badge {
+  display: inline-flex;
+  flex-grow: 0;
+  flex-shrink: 0;
+
+
+
+  // Style
+  &--level,
+  &--lvl {
+    align-items: center;
+    justify-content: center;
+    color: $gc-true-white !important;
+    font-weight: normal !important;
+    vertical-align: middle;
+    background-image: url("../img/level_badge.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+  // Size
+  &--sm {
+    width: $size-sm;
+    height: $size-sm;
+    flex-basis: $size-sm;
+    font-size: $font-size-xs;
+  }
+
+  &--md {
+    width: $size-md;
+    height: $size-md;
+    flex-basis: $size-md;
+    font-size: $font-size-md;
+  }
+
+  &--lg {
+    width: $size-lg;
+    height: $size-lg;
+    flex-basis: $size-lg;
+    font-size: $font-size-lg;
+  }
+
+  &--xl {
+    width: $size-xl;
+    height: $size-xl;
+    flex-basis: $size-xl;
+    font-size: $font-size-xl;
+  }
+}
