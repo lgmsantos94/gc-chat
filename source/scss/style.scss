@@ -6,13 +6,11 @@
 
 // Easing Sass Functions
 // -----------------------------------------------
-
 @import "../../node_modules/easing-sass-function/src/easing-var";
 @import "../../node_modules/easing-sass-function/src/easing-function";
 
 // Simple Line Icons
 // -----------------------------------------------
-
 @import "../../node_modules/simple-line-icons/scss/simple-line-icons";
 
 
@@ -39,4 +37,15 @@
 // ===============================================
 
 @import "partials/avatar";
+
 @import "partials/chat-sidebar";
+@import "partials/chat-friend";
+
+
+
+// ===============================================
+// Utilities
+// ===============================================
+
+@import "partials/animations";
+@import "partials/utilities";

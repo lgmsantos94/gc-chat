@@ -1,0 +1,64 @@
+// ===============================================
+// Chat Friend
+// ===============================================
+
+.c-chat-friend {
+
+  display: flex;
+  align-items: center;
+  flex: 0 0 48px;
+  height: 48px;
+  border-top: 1px solid rgba($gc-true-white, .05);
+  border-bottom: 1px solid rgba($gc-true-black, .1);
+  cursor: pointer;
+  user-select: none;
+  transition: background-color $transition-fast;
+
+  &:hover {
+    background-color: rgba($gc-true-white, .05);
+  }
+
+
+
+  // Avatar
+  // -----------------------------------------------
+  &-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+  }
+
+
+
+  // Main
+  // -----------------------------------------------
+  &-main {
+    display: flex;
+    justify-content: space-between;
+    flex: 1 1 auto;
+    padding-left: 8px;
+    padding-right: 16px;
+    font-size: 12px;
+    font-weight: normal;
+  }
+
+
+
+  // Nick
+  // -----------------------------------------------
+  &-nick {}
+
+
+
+  // List
+  // -----------------------------------------------
+  &-list {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+  }
+}

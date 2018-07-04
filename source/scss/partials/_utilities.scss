@@ -1,0 +1,76 @@
+// -----------------------------------------------
+// Utilities
+// -----------------------------------------------
+
+
+
+// Typography
+// -----------------------------------------------
+
+.u-text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+.u-text-hidden {
+  display: none;
+}
+
+
+
+// Scrollbar
+// -----------------------------------------------
+
+.u-scrollbar {
+  &::-webkit-scrollbar {
+    width: .4rem;
+
+    &:hover {
+      width: .8rem;
+    }
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: rgba($gc-true-white, .05);
+    border-radius: .2rem;
+
+    &:hover {
+      background-color: rgba($gc-true-white, .5);
+    }
+  }
+}
+
+
+
+// Demo
+// -----------------------------------------------
+
+.demo-container {
+  position: fixed;
+  top: 90px;
+  right: 20px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: $size-xs $size-sm;
+  margin-top: $size-xs;
+  width: 32rem;
+  color: $gc-red;
+  background-color: rgba($gc-black, .75);
+  border: .1rem solid rgba($gc-red, .25);
+  border-radius: $radius-md;
+  cursor: pointer;
+  transition: $transition-slow;
+  transition-property: color, background-color, border-color;
+
+  &:hover {
+    color: $gc-white;
+    background-color: $gc-red;
+    border-color: $gc-red;
+  }
+}
