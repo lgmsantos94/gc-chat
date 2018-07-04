@@ -1,0 +1,125 @@
+// ===============================================
+// Avatar
+// ===============================================
+
+.c-avatar {
+
+  display: inline-block;
+
+
+
+  // Container
+  // -----------------------------------------------
+  &-container {
+    position: relative;
+
+    &::before,
+    &::after {
+      position: absolute;
+      z-index: 1;
+      display: none;
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px $gc-black;
+      content: "";
+    }
+
+
+
+    // Badge
+    &::before {
+      top: 0;
+      right: 0;
+      background-color: $gc-red;
+
+      @at-root .m-avatar-badge & {
+        display: block;
+      }
+    }
+
+
+
+    // Status
+    &::after {
+      right: 0;
+      bottom: 0;
+      background-color: $gc-medium-gray;
+
+      @at-root [class*="m-avatar-status"] & {
+        display: block;
+      }
+
+      @at-root .m-avatar-status-online & {
+        background-color: $gc-blue;
+      }
+
+      @at-root .m-avatar-status-ingame & {
+        background-color: $gc-green;
+      }
+
+      @at-root .m-avatar-status-busy & {
+        background-color: $gc-orange;
+      }
+
+      @at-root .m-avatar-status-away & {
+        background-color: $gc-red;
+      }
+
+      @at-root .m-avatar-status-offline & {
+        background-color: $gc-medium-gray;
+      }
+    }
+
+
+
+    // Size
+    @at-root .m-avatar-xs & {
+      max-width: 24px;
+
+      &::before,
+      &::after {
+        width: 24px * .25;
+        height: 24px * .25;
+      }
+    }
+
+    @at-root .m-avatar-sm & {
+      max-width: 32px;
+
+      &::before,
+      &::after {
+        width: 32px * .25;
+        height: 32px * .25;
+      }
+    }
+  }
+
+
+
+  // Image
+  // -----------------------------------------------
+  &-img {
+    border-radius: 50%;
+
+    // Reputation
+    @at-root [class*="m-avatar-reputation"] & {
+      border-width: 2px;
+      border-style: solid;
+    }
+
+    @at-root .m-avatar-reputation-100 & {
+      border-color: $gc-green;
+    }
+
+    @at-root .m-avatar-reputation-75 & {
+      border-color: $gc-yellow;
+    }
+
+    @at-root .m-avatar-reputation-50 & {
+      border-color: $gc-orange;
+    }
+
+    @at-root .m-avatar-reputation-25 & {
+      border-color: $gc-red;
+    }
+  }
+}

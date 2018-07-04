@@ -197,6 +197,28 @@ body.has-bg{height:4159px;background-image:url("../img/gc_home_full.jpg");backgr
 img{max-width:100%;height:auto;vertical-align:middle}
 input,select,button,textarea{font:inherit;vertical-align:middle;background-color:transparent;border:0;border-radius:0}
 input:focus,select:focus,button:focus,textarea:focus{outline:0}
+.c-avatar{display:inline-block}
+.c-avatar-container{position:relative}
+.c-avatar-container::before,.c-avatar-container::after{position:absolute;z-index:1;display:none;border-radius:50%;-webkit-box-shadow:0 0 0 2px #081020;box-shadow:0 0 0 2px #081020;content:""}
+.c-avatar-container::before{top:0;right:0;background-color:#ef2625}
+.m-avatar-badge .c-avatar-container::before{display:block}
+.c-avatar-container::after{right:0;bottom:0;background-color:#909498}
+[class*="m-avatar-status"] .c-avatar-container::after{display:block}
+.m-avatar-status-online .c-avatar-container::after{background-color:#247eb9}
+.m-avatar-status-ingame .c-avatar-container::after{background-color:#a1be00}
+.m-avatar-status-busy .c-avatar-container::after{background-color:#eb8211}
+.m-avatar-status-away .c-avatar-container::after{background-color:#ef2625}
+.m-avatar-status-offline .c-avatar-container::after{background-color:#909498}
+.m-avatar-xs .c-avatar-container{max-width:24px}
+.m-avatar-xs .c-avatar-container::before,.m-avatar-xs .c-avatar-container::after{width:6px;height:6px}
+.m-avatar-sm .c-avatar-container{max-width:32px}
+.m-avatar-sm .c-avatar-container::before,.m-avatar-sm .c-avatar-container::after{width:8px;height:8px}
+.c-avatar-img{border-radius:50%}
+[class*="m-avatar-reputation"] .c-avatar-img{border-width:2px;border-style:solid}
+.m-avatar-reputation-100 .c-avatar-img{border-color:#a1be00}
+.m-avatar-reputation-75 .c-avatar-img{border-color:#ddbc38}
+.m-avatar-reputation-50 .c-avatar-img{border-color:#eb8211}
+.m-avatar-reputation-25 .c-avatar-img{border-color:#ef2625}
 .c-chat-sidebar{position:fixed;top:70px;left:0;bottom:0;height:100%;width:240px;-webkit-transition:250ms cubic-bezier(0.23,1,0.32,1);transition:250ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:opacity,-webkit-transform;transition-property:opacity,-webkit-transform;transition-property:opacity,transform;transition-property:opacity,transform,-webkit-transform}
 .c-chat-sidebar-container{position:absolute;top:0;left:0;right:0;bottom:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-width:100%;min-height:100%;max-width:100%;max-height:100%;background-color:rgba(8,16,32,0.75);border-right:1px solid rgba(255,255,255,0.1)}
 .c-chat-sidebar-group{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-flex:0;-webkit-flex:0 0 auto;-ms-flex:0 0 auto;flex:0 0 auto;height:auto;max-height:168px}
@@ -208,5 +230,3 @@ input:focus,select:focus,button:focus,textarea:focus{outline:0}
 .m-chat-sidebar-group-friend .c-chat-sidebar-header{color:#a1be00}
 .c-chat-sidebar-icon{-webkit-box-flex:0;-webkit-flex:0 0 48px;-ms-flex:0 0 48px;flex:0 0 48px;width:48px;text-align:center}
 .c-chat-sidebar-title{-webkit-box-flex:1;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;text-transform:uppercase;letter-spacing:1px}
-.c-avatar-img{border-radius:50%}
-.m-avatar-sm .c-avatar-img{max-width:32px}
