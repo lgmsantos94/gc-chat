@@ -23,8 +23,8 @@ npm install --global gulp
 Clone este repositório e rode os seguintes comandos para testar:
 
 ```
-$ npm install
-$ gulp server
+npm install
+gulp server
 ```
 
 ---
