@@ -1,0 +1,38 @@
+// ===============================================
+// Badge
+// ===============================================
+
+.c-badge {
+
+  display: inline-flex;
+  flex: 0 0;
+
+
+
+  // Size
+  // -----------------------------------------------
+  &.m-badge-sm {
+    flex-basis: 20px;
+    width: 20px;
+    height: 20px;
+    font-size: 12px;
+  }
+
+
+
+  // Level
+  // -----------------------------------------------
+  @at-root [class*="m-badge-lvl"] {
+    align-items: center;
+    justify-content: center;
+    color: $gc-true-white;
+    font-weight: normal;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  &.m-badge-lvl-09 {
+    background-image: url("../img/level_badge.svg");
+  }
+}
