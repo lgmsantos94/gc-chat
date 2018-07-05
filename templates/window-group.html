@@ -1,4 +1,4 @@
-<div class="c-chat-window m-chat-window-group">
+<div class="c-chat-window m-chat-window-group is-open">
   <div class="c-chat-window-bubble">
     <div class="c-chat-window-header">
       <button class="c-chat-window-option js-toggle-chat-window" title="Esconder Conversa">
@@ -7,18 +7,18 @@
       </button>
       <!-- /.c-chat-window-option -->
       <div class="c-chat-window-main">
-        <span class="c-chat-window-nick">Nome do Grupo</span>
+        <span class="c-chat-window-name">Nome do Grupo</span>
         <span class="c-chat-window-status m-chat-window-status-online">10 Membros Online</span>
       </div>
       <!-- /.c-chat-window-main -->
       <button class="c-chat-window-option js-close-chat-window" title="Fechar Conversa">
-        <span class="icon-arrow-close"></span>
+        <span class="icon-close"></span>
         <span class="u-text-hidden">Fechar Conversa</span>
       </button>
       <!-- /.c-chat-window-option -->
     </div>
     <!-- /.c-chat-window-header -->
-    <div class="c-chat-window-body">
+    <div class="c-chat-window-body u-scrollbar">
       <div class="c-chat-window-msg">
         <div class="c-chat-window-msg-meta">
           <span class="c-chat-window-msg-author">Nickname</span>
@@ -47,7 +47,7 @@
     <!-- /.c-chat-window-body -->
     <div class="c-chat-window-footer">
       <form action="#" class="c-chat-window-form">
-        <textarea class="c-chat-window-input" placeholder="Escreva sua mensagem&hellip;"></textarea>
+        <textarea class="c-chat-window-input u-scrollbar" placeholder="Escreva sua mensagem&hellip;"></textarea>
         <button type="button" class="c-chat-window-send">
           <span class="icon-paper-plane"></span>
           <span class="u-text-hidden">Enviar Mensagem</span>
@@ -59,7 +59,7 @@
     <!-- /.c-chat-window-footer -->
   </div>
   <!-- /.c-chat-window-bubble -->
-  <div class="c-chat-window-avatar">
+  <div class="c-chat-window-avatar js-toggle-chat-window">
     <div class="c-avatar m-avatar-sm m-avatar-badge">
       <div class="c-avatar-container">
         <img src="assets/img/avatar_coldzera.jpg" alt="Nickname" title="Nickname" class="c-avatar-img">

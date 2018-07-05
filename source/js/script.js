@@ -23,50 +23,48 @@
 
 
   // Add chat to dock
-  $('.chat-sidebar').on('click', '.js-add-chat-dock-item', function () {
-    var $dock = $('.chat-dock__container');
+  $('.c-chat-sidebar').on('click', '.js-add-chat-dock-window', function () {
+    var $dockContainer = $('.c-chat-dock-container');
 
-    if ($('.chat-item').length === 5) {
-      var $first_item = $dock.children('.chat-item').first();
-      if ($first_item.hasClass('chat-item--lobby')) {
-        $first_item.next().remove();
-      } else {
-        $first_item.remove();
-      }
+    if ($('.c-chat-window').length === 5) {
+      var $firstWindow = $dockContainer.children('.c-chat-window').first();
+      $firstWindow.hasClass('m-chat-window-lobby')
+        ? $firstWindow.next().remove()
+        : $firstWindow.remove();
     }
 
-    var path = 'templates/' + $(this).data('type') + '.html';
+    var path = 'templates/window-' + $(this).data('type') + '.html';
     $.get(path, function (data) {
-      $dock.append(data);
+      $dockContainer.append(data);
     });
   });
 
 
 
   // Toggle chat dock window
-  $('.chat-dock').on('click', '.js-toggle-chat-dock-window', function () {
-    var $chat_item   = $(this).closest('.chat-item');
-    var $chat_avatar = $chat_item.find('.chat-item__avatar .avatar');
+  $('.c-chat-dock').on('click', '.js-toggle-chat-window', function () {
+    var $chatWindow = $(this).closest('.c-chat-window');
+    var $chatAvatar = $chatWindow.find('.c-chat-window-avatar .c-avatar');
 
     // Remove notification dot
-    if ($chat_avatar.hasClass('avatar--notification')) {
-      $chat_avatar.removeClass('avatar--notification');
+    if ($chatAvatar.hasClass('m-avatar-badge')) {
+      $chatAvatar.removeClass('m-avatar-badge');
     }
 
-    $chat_item.toggleClass('is-open');
+    $chatWindow.toggleClass('is-open');
   });
 
 
 
   // Close chat dock conversation
-  $('.chat-dock').on('click', '.js-close-chat-dock-item', function () {
-    $(this).closest('.chat-item').remove();
+  $('.c-chat-dock').on('click', '.js-close-chat-window', function () {
+    $(this).closest('.c-chat-window').fadeOut(125).remove();
   });
 
 
 
   // Send chat message with "Enter" and create a newline with "Shift+Enter"
-  $('.chat-dock').on('keypress', '.chat-item__input', function (e) {
+  $('.c-chat-dock').on('keypress', '.c-chat-window-input', function (e) {
     if (e.which === 13 && !e.shiftKey) {
       $(this).closest('form')[0].reset(); // Clear form because there is no submit implementation
       e.preventDefault();
@@ -76,24 +74,26 @@
 
 
   // Demo
+  // -----------------------------------------------
+
   $('.js-demo-toggle-bg').click(function () {
     $('body').toggleClass('has-bg');
   });
 
   $('.js-demo-enter-lobby').click(function () {
-    var $dock = $('.chat-dock__container');
-    var $first_item = $dock.children('.chat-item').first();
+    var $dockContainer = $('.c-chat-dock-container');
+    var $firstItem = $dockContainer.children('.c-chat-window').first();
 
-    if ($first_item.hasClass('chat-item--lobby')) {
+    if ($firstItem.hasClass('.m-chat-window-lobby')) {
       return;
     }
 
-    if ($('.chat-item').length === 5) {
-      $first_item.remove();
+    if ($('.c-chat-item').length === 5) {
+      $firstItem.remove();
     }
 
     $.get('templates/lobby.html', function (data) {
-      $dock.prepend(data);
+      $dockContainer.prepend(data);
     });
   });
 

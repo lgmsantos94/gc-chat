@@ -1,0 +1,26 @@
+// ===============================================
+// Chat Dock
+// ===============================================
+
+.c-chat-dock {
+
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24px;
+
+
+
+  // Container
+  // -----------------------------------------------
+  &-container {
+    display: flex;
+    align-items: flex-end;
+    transform: translate3d(100px, 0, 0);
+    transition: transform $transition-fast;
+  }
+
+  @at-root .c-global-chat.is-active .c-chat-sidebar.is-open ~ & &-container {
+    transform: translate3d(290px, 0, 0);
+  }
+}

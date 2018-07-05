@@ -1,0 +1,320 @@
+// ===============================================
+// Chat Window
+// ===============================================
+
+.c-chat-window {
+
+  position: relative;
+  max-width: 320px;
+
+  &.is-open {
+    min-width: 280px;
+  }
+
+
+
+  // Bubble
+  // -----------------------------------------------
+  &-bubble {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 240px;
+    margin-right: 16px;
+    background-color: rgba($gc-black, .95);
+    border: .1rem solid rgba($gc-true-white, .1);
+    border-radius: $radius-md;
+    box-shadow: 0 .8rem 4.8rem rgba($gc-true-black, .25);
+    opacity: 0;
+    transform: translate3d(0, -90%, 0) scale(.9);
+    transform-origin: left bottom;
+    transition: $transition-fast;
+    transition-property: opacity, transform;
+  }
+
+  &.is-open &-bubble {
+    opacity: 1;
+    transform: translate3d(0, -100%, 0);
+  }
+
+
+
+  // Header
+  // -----------------------------------------------
+  &-header {
+    display: flex;
+    border-bottom: .1rem solid rgba($gc-true-white, .1);
+    border-radius: $radius-md $radius-md 0 0;
+  }
+
+
+
+  // Option
+  // -----------------------------------------------
+  &-option {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 48px;
+    width: 48px;
+    height: 48px;
+    color: rgba($gc-true-white, .75);
+    font-size: $font-size-md;
+    cursor: pointer;
+    transition: $transition-fast;
+    transition-property: color, background-color;
+
+    @at-root .c-chat-window-header &:first-of-type {
+      border-top-left-radius: $radius-md;
+    }
+
+    @at-root .c-chat-window-header &:last-of-type {
+      border-top-right-radius: $radius-md;
+    }
+
+    @at-root .c-chat-window-footer &:first-of-type {
+      border-bottom-left-radius: $radius-md;
+    }
+
+    @at-root .c-chat-window-footer &:last-of-type {
+      border-bottom-right-radius: $radius-md;
+    }
+
+    &:hover {
+      color: $gc-true-white;
+      background-color: rgba($gc-true-white, .1);
+
+      &.js-toggle-chat-window {
+        color: $gc-blue;
+      }
+
+      &.js-close-chat-window {
+        color: $gc-red;
+      }
+    }
+  }
+
+
+
+  // Main
+  // -----------------------------------------------
+  &-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1 0 48px;
+    min-height: 48px;
+    padding-left: 8px;
+    padding-right: 8px;
+    cursor: pointer;
+    transition: $transition-fast;
+    transition-property: color, background-color;
+
+    &:hover {
+      background-color: rgba($gc-true-white, .1);
+    }
+  }
+
+
+
+  // Name
+  // -----------------------------------------------
+  &-name {
+    color: $gc-true-white;
+    font-size: $font-size-sm;
+    line-height: $line-height-heading;
+  }
+
+
+
+  // Status
+  // -----------------------------------------------
+  &-status {
+    margin-top: $size-xs * .5;
+    font-size: $font-size-xs;
+    line-height: $line-height-heading;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+
+    @at-root &.m-chat-window-status-online {
+      color: $gc-blue;
+    }
+  }
+
+
+
+  // Body
+  // -----------------------------------------------
+  &-body {
+    position: relative;
+    overflow-y: scroll;
+    min-height: 280px;
+    max-height: 280px;
+    padding: $size-sm $size-xs;
+  }
+
+
+
+  // Message
+  // -----------------------------------------------
+  &-msg {
+    display: flex;
+    flex-flow: column wrap;
+
+    & + & {
+      margin-top: $size-xs;
+    }
+
+    // Meta
+    &-meta {
+      color: rgba($gc-true-white, .25);
+      font-size: $font-size-xs;
+      transition: color $transition-fast;
+
+      @at-root .m-chat-window-msg-you & {
+        text-align: right;
+      }
+    }
+
+    &:hover &-meta {
+      color: $gc-true-white;
+    }
+
+    &-time {
+      margin-left: $size-xs * .5;
+    }
+
+    // Body
+    &-body {
+      flex: 1 1 auto;
+      align-self: flex-start;
+      padding: $size-sm;
+      margin-top: $size-xs / 2;
+      font-size: $font-size-sm;
+      line-height: $line-height-heading;
+      background-color: rgba($gc-true-white, .1);
+      border-radius: 0 $radius-md $radius-md;
+
+      @at-root .m-chat-window-msg-you & {
+        align-self: flex-end;
+        color: $gc-green;
+        background-color: rgba($gc-true-white, .025);
+        border-radius: $radius-md 0 $radius-md $radius-md;
+      }
+    }
+  }
+
+
+
+  // Footer
+  // -----------------------------------------------
+  &-footer {
+    background-color: rgba($gc-true-white, .05);
+    border-top: .1rem solid rgba($gc-true-white, .1);
+    border-radius: 0 0 $radius-md $radius-md;
+    transition: background-color $transition-fast;
+
+    &:hover {
+      background-color: rgba($gc-true-white, .1);
+    }
+  }
+
+
+
+  // Form
+  // -----------------------------------------------
+  &-form {
+    display: flex;
+  }
+
+  &-input {
+    flex: 1 0;
+    height: $size-xl;
+    padding: $size-sm $size-xs $size-xs $size-sm;
+    color: $gc-white;
+    font-size: $font-size-sm;
+    resize: none;
+  }
+
+  &-send {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 $size-xl;
+    width: $size-xl;
+    height: $size-xl;
+    color: rgba($gc-true-white, .75);
+    font-size: $font-size-md;
+    cursor: pointer;
+    transition: $transition-fast;
+    transition-property: color, background-color;
+
+    &:hover {
+      color: $gc-green;
+      background-color: rgba($gc-true-white, .1);
+    }
+  }
+
+
+
+  // Avatar
+  // -----------------------------------------------
+  &-avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: $size-xl;
+    height: $size-xl;
+    cursor: pointer;
+    transition: transform $transition-slow;
+  }
+
+
+
+  // Modifiers
+  // -----------------------------------------------
+
+  // Lobby
+  &.m-chat-window-lobby &-avatar {
+    .c-avatar-container,
+    .c-avatar-img {
+      border-radius: $radius-xs;
+    }
+  }
+
+  &.m-chat-window-lobby {
+    border-color: rgba($gc-red, .5);
+  }
+
+  &.m-chat-window-lobby &-header {
+    background-image: radial-gradient(at 50% -100%, rgba($gc-red, .25), rgba($gc-red, 0) 65%);
+  }
+
+  // Team
+  &.m-chat-window-team {
+    border-color: rgba($gc-orange, .5);
+  }
+
+  &.m-chat-window-team &-header {
+    background-image: radial-gradient(at 50% -100%, rgba($gc-orange, .25), rgba($gc-orange, 0) 65%);
+  }
+
+  // Group
+  &.m-chat-window-group {
+    border-color: rgba($gc-lilac, .5);
+  }
+
+  &.m-chat-window-group &-header {
+    background-image: radial-gradient(at 50% -100%, rgba($gc-lilac, .25), rgba($gc-lilac, 0) 65%);
+  }
+
+  // Friend
+  &.m-chat-window-friend {
+    border-color: rgba($gc-white, .25);
+  }
+
+  &.m-chat-window-friend &-header {
+    background-image: radial-gradient(at 50% -100%, rgba($gc-white, .25), rgba($gc-white, 0) 65%);
+  }
+}
