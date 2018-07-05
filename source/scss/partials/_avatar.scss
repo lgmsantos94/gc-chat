@@ -73,7 +73,8 @@
 
     // Size
     @at-root .m-avatar-xs & {
-      max-width: 24px;
+      width: 24px;
+      height: 24px;
 
       &::before,
       &::after {
@@ -83,13 +84,21 @@
     }
 
     @at-root .m-avatar-sm & {
-      max-width: 32px;
+      width: 32px;
+      height: 32px;
 
       &::before,
       &::after {
         width: 32px * .25;
         height: 32px * .25;
       }
+    }
+
+    // Empty
+    @at-root .m-avatar-empty & {
+      background-color: rgba($gc-true-black, .1);
+      border: .2rem dotted rgba($gc-true-white, .25);
+      border-radius: 50%;
     }
   }
 
@@ -121,5 +130,17 @@
     @at-root .m-avatar-reputation-25 & {
       border-color: $gc-red;
     }
+  }
+
+
+
+  // Group
+  // -----------------------------------------------
+  &-group {
+    display: flex;
+  }
+
+  &-group & + & {
+    margin-left: $size-xs * .5;
   }
 }
