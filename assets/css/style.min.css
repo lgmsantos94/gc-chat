@@ -261,9 +261,9 @@ input:focus,select:focus,button:focus,textarea:focus{outline:0}
 .c-chat-dock{position:fixed;left:0;right:0;bottom:24px}
 .c-chat-dock-container{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:end;-webkit-align-items:flex-end;-ms-flex-align:end;align-items:flex-end;-webkit-transform:translate3d(100px,0,0);transform:translate3d(100px,0,0);-webkit-transition:-webkit-transform 250ms cubic-bezier(0.23,1,0.32,1);transition:-webkit-transform 250ms cubic-bezier(0.23,1,0.32,1);transition:transform 250ms cubic-bezier(0.23,1,0.32,1);transition:transform 250ms cubic-bezier(0.23,1,0.32,1),-webkit-transform 250ms cubic-bezier(0.23,1,0.32,1)}
 .c-global-chat.is-active .c-chat-sidebar.is-open ~ .c-chat-dock .c-chat-dock-container{-webkit-transform:translate3d(290px,0,0);transform:translate3d(290px,0,0)}
-.c-chat-window{position:relative;max-width:320px}
-.c-chat-window.is-open{min-width:280px}
-.c-chat-window-bubble{position:absolute;top:0;left:0;min-width:240px;margin-right:16px;background-color:rgba(8,16,32,0.95);border:.1rem solid rgba(255,255,255,0.1);border-radius:.8rem;-webkit-box-shadow:0 .8rem 4.8rem rgba(0,0,0,0.25);box-shadow:0 .8rem 4.8rem rgba(0,0,0,0.25);opacity:0;-webkit-transform:translate3d(0,-90%,0) scale(0.9);transform:translate3d(0,-90%,0) scale(0.9);-webkit-transform-origin:left bottom;-ms-transform-origin:left bottom;transform-origin:left bottom;-webkit-transition:250ms cubic-bezier(0.23,1,0.32,1);transition:250ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:opacity,-webkit-transform;transition-property:opacity,-webkit-transform;transition-property:opacity,transform;transition-property:opacity,transform,-webkit-transform}
+.c-chat-window{position:relative;min-width:4.8rem;max-width:32rem;-webkit-transition:min-width 250ms cubic-bezier(0.23,1,0.32,1);transition:min-width 250ms cubic-bezier(0.23,1,0.32,1)}
+.c-chat-window.is-open{min-width:28rem;margin-right:16px}
+.c-chat-window-bubble{position:absolute;top:0;left:0;min-width:280px;background-color:rgba(8,16,32,0.95);border:.1rem solid rgba(255,255,255,0.1);border-radius:.8rem;-webkit-box-shadow:0 .8rem 4.8rem rgba(0,0,0,0.25);box-shadow:0 .8rem 4.8rem rgba(0,0,0,0.25);opacity:0;-webkit-transform:translate3d(0,-90%,0) scale(0.9);transform:translate3d(0,-90%,0) scale(0.9);-webkit-transform-origin:left bottom;-ms-transform-origin:left bottom;transform-origin:left bottom;-webkit-transition:250ms cubic-bezier(0.23,1,0.32,1);transition:250ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:opacity,-webkit-transform;transition-property:opacity,-webkit-transform;transition-property:opacity,transform;transition-property:opacity,transform,-webkit-transform}
 .c-chat-window.is-open .c-chat-window-bubble{opacity:1;-webkit-transform:translate3d(0,-100%,0);transform:translate3d(0,-100%,0)}
 .c-chat-window-header{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;border-bottom:.1rem solid rgba(255,255,255,0.1);border-radius:.8rem .8rem 0 0}
 .c-chat-window-option{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;-webkit-box-flex:0;-webkit-flex:0 0 48px;-ms-flex:0 0 48px;flex:0 0 48px;width:48px;height:48px;color:rgba(255,255,255,0.75);font-size:1.6rem;cursor:pointer;-webkit-transition:250ms cubic-bezier(0.23,1,0.32,1);transition:250ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:color,background-color;transition-property:color,background-color}
@@ -296,13 +296,13 @@ input:focus,select:focus,button:focus,textarea:focus{outline:0}
 .c-chat-window-send:hover{color:#a1be00;background-color:rgba(255,255,255,0.1)}
 .c-chat-window-avatar{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;width:4.8rem;height:4.8rem;cursor:pointer;-webkit-transition:-webkit-transform 500ms cubic-bezier(0.23,1,0.32,1);transition:-webkit-transform 500ms cubic-bezier(0.23,1,0.32,1);transition:transform 500ms cubic-bezier(0.23,1,0.32,1);transition:transform 500ms cubic-bezier(0.23,1,0.32,1),-webkit-transform 500ms cubic-bezier(0.23,1,0.32,1)}
 .c-chat-window.m-chat-window-lobby .c-chat-window-avatar .c-avatar-container,.c-chat-window.m-chat-window-lobby .c-chat-window-avatar .c-avatar-img{border-radius:.2rem}
-.c-chat-window.m-chat-window-lobby{border-color:rgba(239,38,37,0.5)}
+.c-chat-window.m-chat-window-lobby .c-chat-window-bubble{border-color:rgba(239,38,37,0.5)}
 .c-chat-window.m-chat-window-lobby .c-chat-window-header{background-image:-webkit-radial-gradient(at 50% -100%,rgba(239,38,37,0.25),rgba(239,38,37,0) 65%);background-image:radial-gradient(at 50% -100%,rgba(239,38,37,0.25),rgba(239,38,37,0) 65%)}
-.c-chat-window.m-chat-window-team{border-color:rgba(235,130,17,0.5)}
+.c-chat-window.m-chat-window-team .c-chat-window-bubble{border-color:rgba(235,130,17,0.5)}
 .c-chat-window.m-chat-window-team .c-chat-window-header{background-image:-webkit-radial-gradient(at 50% -100%,rgba(235,130,17,0.25),rgba(235,130,17,0) 65%);background-image:radial-gradient(at 50% -100%,rgba(235,130,17,0.25),rgba(235,130,17,0) 65%)}
-.c-chat-window.m-chat-window-group{border-color:rgba(188,138,255,0.5)}
+.c-chat-window.m-chat-window-group .c-chat-window-bubble{border-color:rgba(188,138,255,0.5)}
 .c-chat-window.m-chat-window-group .c-chat-window-header{background-image:-webkit-radial-gradient(at 50% -100%,rgba(188,138,255,0.25),rgba(188,138,255,0) 65%);background-image:radial-gradient(at 50% -100%,rgba(188,138,255,0.25),rgba(188,138,255,0) 65%)}
-.c-chat-window.m-chat-window-friend{border-color:rgba(247,251,255,0.25)}
+.c-chat-window.m-chat-window-friend .c-chat-window-bubble{border-color:rgba(247,251,255,0.25)}
 .c-chat-window.m-chat-window-friend .c-chat-window-header{background-image:-webkit-radial-gradient(at 50% -100%,rgba(247,251,255,0.25),rgba(247,251,255,0) 65%);background-image:radial-gradient(at 50% -100%,rgba(247,251,255,0.25),rgba(247,251,255,0) 65%)}
 .u-debug *,.u-debug *::before,.u-debug *::after{outline:1px solid rgba(239,38,37,0.5)}
 .u-text-truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
@@ -311,9 +311,9 @@ input:focus,select:focus,button:focus,textarea:focus{outline:0}
 .u-scrollbar::-webkit-scrollbar:hover{width:.8rem}
 .u-scrollbar::-webkit-scrollbar-thumb{background-color:rgba(255,255,255,0.05);border-radius:.2rem}
 .u-scrollbar::-webkit-scrollbar-thumb:hover{background-color:rgba(255,255,255,0.5)}
-.demo-container{position:fixed;top:90px;right:20px}
-.btn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:.8rem 1.6rem;margin-top:.8rem;width:32rem;color:#ef2625;background-color:rgba(8,16,32,0.75);border:.1rem solid rgba(239,38,37,0.25);border-radius:.8rem;cursor:pointer;-webkit-transition:500ms cubic-bezier(0.23,1,0.32,1);transition:500ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:color,background-color,border-color;transition-property:color,background-color,border-color}
-.btn:hover{color:#f7fbff;background-color:#ef2625;border-color:#ef2625}
+.c-demo-container{position:fixed;top:90px;right:20px}
+.c-demo-btn{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;padding:.8rem 1.6rem;margin-top:.8rem;width:32rem;color:#ef2625;background-color:rgba(8,16,32,0.75);border:.1rem solid rgba(239,38,37,0.25);border-radius:.8rem;cursor:pointer;-webkit-transition:500ms cubic-bezier(0.23,1,0.32,1);transition:500ms cubic-bezier(0.23,1,0.32,1);-webkit-transition-property:color,background-color,border-color;transition-property:color,background-color,border-color}
+.c-demo-btn:hover{color:#f7fbff;background-color:#ef2625;border-color:#ef2625}
 @-webkit-keyframes pulse{0%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}
 50%{-webkit-transform:scale3d(1.25,1.25,1.25);transform:scale3d(1.25,1.25,1.25)}
 100%{-webkit-transform:scale3d(1,1,1);transform:scale3d(1,1,1)}

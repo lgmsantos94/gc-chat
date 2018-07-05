@@ -5,10 +5,13 @@
 .c-chat-window {
 
   position: relative;
-  max-width: 320px;
+  min-width: $size-xl;
+  max-width: 32rem;
+  transition: min-width $transition-fast;
 
   &.is-open {
-    min-width: 280px;
+    min-width: 28rem;
+    margin-right: 16px;
   }
 
 
@@ -19,8 +22,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 240px;
-    margin-right: 16px;
+    min-width: 280px;
     background-color: rgba($gc-black, .95);
     border: .1rem solid rgba($gc-true-white, .1);
     border-radius: $radius-md;
@@ -283,7 +285,7 @@
     }
   }
 
-  &.m-chat-window-lobby {
+  &.m-chat-window-lobby &-bubble {
     border-color: rgba($gc-red, .5);
   }
 
@@ -292,7 +294,7 @@
   }
 
   // Team
-  &.m-chat-window-team {
+  &.m-chat-window-team &-bubble {
     border-color: rgba($gc-orange, .5);
   }
 
@@ -301,7 +303,7 @@
   }
 
   // Group
-  &.m-chat-window-group {
+  &.m-chat-window-group &-bubble {
     border-color: rgba($gc-lilac, .5);
   }
 
@@ -310,7 +312,7 @@
   }
 
   // Friend
-  &.m-chat-window-friend {
+  &.m-chat-window-friend &-bubble {
     border-color: rgba($gc-white, .25);
   }
 

@@ -58,7 +58,9 @@
 
   // Close chat dock conversation
   $('.c-chat-dock').on('click', '.js-close-chat-window', function () {
-    $(this).closest('.c-chat-window').fadeOut(125).remove();
+    $(this).closest('.c-chat-window').fadeOut(125, function () {
+      $(this).remove();
+    });
   });
 
 
@@ -84,15 +86,15 @@
     var $dockContainer = $('.c-chat-dock-container');
     var $firstItem = $dockContainer.children('.c-chat-window').first();
 
-    if ($firstItem.hasClass('.m-chat-window-lobby')) {
+    if ($firstItem.hasClass('m-chat-window-lobby')) {
       return;
     }
 
-    if ($('.c-chat-item').length === 5) {
+    if ($('.c-chat-window').length === 5) {
       $firstItem.remove();
     }
 
-    $.get('templates/lobby.html', function (data) {
+    $.get('templates/window-lobby.html', function (data) {
       $dockContainer.prepend(data);
     });
   });
