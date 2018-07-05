@@ -50,7 +50,7 @@
     transform: scale(1.1);
   }
 
-  @at-root .c-chat-sidebar.is-open ~ & {
+  @at-root .c-global-chat.is-active .c-chat-sidebar.is-open ~ & {
     transform: translate3d(190px,0,0);
 
     &:hover {
@@ -59,7 +59,7 @@
   }
 
   &.is-active {
-    color: transparent;
+    color: $gc-black;
     background-color: $gc-black;
 
     &::before,
