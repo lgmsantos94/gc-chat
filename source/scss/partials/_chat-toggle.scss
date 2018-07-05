@@ -9,16 +9,16 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  left: 20px;
-  bottom: 20px;
-  width: 60px;
-  height: 60px;
+  left: 2rem;
+  bottom: 2rem;
+  width: 6rem;
+  height: 6rem;
   color: $gc-true-white;
   font-size: $font-size-xl;
   background-color: $gc-green;
-  border: 1px solid rgba($gc-true-white, .1);
+  border: .1rem solid rgba($gc-true-white, .1);
   border-radius: 50%;
-  box-shadow: 0 8px 24px rgba($gc-true-black, .25);
+  box-shadow: 0 .8rem 2.4rem rgba($gc-true-black, .25);
   cursor: pointer;
   transition: $transition-fast;
   transition-property: color, background-color, transform;
@@ -51,10 +51,10 @@
   }
 
   @at-root .c-global-chat.is-active .c-chat-sidebar.is-open ~ & {
-    transform: translate3d(190px,0,0);
+    transform: translate3d(19rem, 0, 0);
 
     &:hover {
-      transform: translate3d(190px,0,0) scale(1.1);
+      transform: translate3d(19rem, 0, 0) scale(1.1);
     }
   }
 

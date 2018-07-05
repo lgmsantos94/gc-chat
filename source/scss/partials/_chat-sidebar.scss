@@ -5,19 +5,19 @@
 .c-chat-sidebar {
 
   position: fixed;
-  top: 70px;
+  top: $site-header-height;
   left: 0;
   bottom: 0;
   max-height: 100%;
-  width: 240px;
+  width: $chat-sidebar-width;
   opacity: 0;
-  transform: translate3d(calc(-100%),0,0) scale(.9);
+  transform: translate3d(calc(-100%), 0, 0) scale(.9);
   transition: $transition-fast;
   transition-property: opacity, transform;
 
   @at-root .c-global-chat.is-active & {
     opacity: 1;
-    transform: translate3d(calc(-100% + 48px),0,0);
+    transform: translate3d(calc(-100% + #{$size-xl}), 0, 0);
 
     &.is-open {
       transform: none;
@@ -42,7 +42,7 @@
     max-width: 100%;
     max-height: 100%;
     background-color: rgba($gc-black, .75);
-    border-right: 1px solid rgba($gc-true-white, .1);
+    border-right: .1rem solid rgba($gc-true-white, .1);
   }
 
 
@@ -54,15 +54,15 @@
     flex-direction: column;
     flex: 0 0 auto;
     height: auto;
-    max-height: (24px + (48px * 3));
-    transform: translate3d(calc(100% - 48px),0,0);
+    max-height: ($size-md + ($size-xl * 3));
+    transform: translate3d(calc(100% - #{$size-xl}), 0, 0);
     transition: transform $transition-fast;
 
     &:last-of-type {
       flex: 1 1 auto;
       max-height: none;
       margin-bottom: 100px;
-      border-bottom: 1px solid rgba($gc-true-white, .1);
+      border-bottom: .1rem solid rgba($gc-true-white, .1);
     }
 
     @at-root .is-open & {
@@ -79,13 +79,13 @@
   &-header {
     display: flex;
     align-items: center;
-    flex: 0 0 24px;
-    height: 24px;
-    font-size: 12px;
+    flex: 0 0 $size-md;
+    height: $size-md;
+    font-size: $font-size-sm;
     line-height: 1.25;
     background-color: rgba($gc-true-black, .25);
-    border-top: 1px solid rgba($gc-true-white, .1);
-    border-bottom: 1px solid rgba($gc-true-black, .25);
+    border-top: .1rem solid rgba($gc-true-white, .1);
+    border-bottom: .1rem solid rgba($gc-true-black, .25);
     cursor: pointer;
     user-select: none;
     transition: $transition-fast;
@@ -114,8 +114,8 @@
   // Icon
   // -----------------------------------------------
   &-icon {
-    flex: 0 0 48px;
-    width: 48px;
+    flex: 0 0 $size-xl;
+    width: $size-xl;
     text-align: center;
   }
 
@@ -126,7 +126,7 @@
   &-title {
     flex: 1 1 auto;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: .1rem;
   }
 
 
@@ -140,9 +140,9 @@
     justify-content: center;
     top: 50%;
     right: 0;
-    width: 24px;
-    height: 48px;
-    font-size: 12px;
+    width: $size-md;
+    height: $size-xl;
+    font-size: $font-size-sm;
     color: rgba($gc-white, .5);
     background-color: rgba($gc-black, .5);
     border-top-right-radius: $radius-sm;

@@ -11,7 +11,7 @@
 
   &.is-open {
     min-width: 28rem;
-    margin-right: 16px;
+    margin-right: $size-sm;
   }
 
 
@@ -22,7 +22,7 @@
     position: absolute;
     top: 0;
     left: 0;
-    min-width: 280px;
+    min-width: 28rem;
     background-color: rgba($gc-black, .95);
     border: .1rem solid rgba($gc-true-white, .1);
     border-radius: $radius-md;
@@ -57,9 +57,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    flex: 0 0 48px;
-    width: 48px;
-    height: 48px;
+    flex: 0 0 $size-xl;
+    width: $size-xl;
+    height: $size-xl;
     color: rgba($gc-true-white, .75);
     font-size: $font-size-md;
     cursor: pointer;
@@ -105,10 +105,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    flex: 1 0 48px;
-    min-height: 48px;
-    padding-left: 8px;
-    padding-right: 8px;
+    flex: 1 0 $size-xl;
+    min-height: $size-xl;
+    padding-left: $size-xs;
+    padding-right: $size-xs;
     cursor: pointer;
     transition: $transition-fast;
     transition-property: color, background-color;
@@ -151,8 +151,8 @@
   &-body {
     position: relative;
     overflow-y: scroll;
-    min-height: 280px;
-    max-height: 280px;
+    min-height: 28rem;
+    max-height: 28rem;
     padding: $size-sm;
   }
 

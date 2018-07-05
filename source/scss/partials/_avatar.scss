@@ -19,7 +19,7 @@
       z-index: 1;
       display: none;
       border-radius: 50%;
-      box-shadow: 0 0 0 2px $gc-black;
+      box-shadow: 0 0 0 .2rem $gc-black;
       content: "";
     }
 
@@ -73,24 +73,24 @@
 
     // Size
     @at-root .m-avatar-xs & {
-      width: 24px;
-      height: 24px;
+      width: $size-md;
+      height: $size-md;
 
       &::before,
       &::after {
-        width: 24px * .25;
-        height: 24px * .25;
+        width: $size-md * .25;
+        height: $size-md * .25;
       }
     }
 
     @at-root .m-avatar-sm & {
-      width: 32px;
-      height: 32px;
+      width: $size-lg;
+      height: $size-lg;
 
       &::before,
       &::after {
-        width: 32px * .25;
-        height: 32px * .25;
+        width: $size-lg * .25;
+        height: $size-lg * .25;
       }
     }
 
