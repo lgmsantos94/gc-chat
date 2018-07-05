@@ -1,0 +1,78 @@
+// ===============================================
+// Chat Toggle
+// ===============================================
+
+.c-chat-toggle {
+
+  position: fixed;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 20px;
+  bottom: 20px;
+  width: 60px;
+  height: 60px;
+  color: $gc-true-white;
+  font-size: $font-size-xl;
+  background-color: $gc-green;
+  border: 1px solid rgba($gc-true-white, .1);
+  border-radius: 50%;
+  box-shadow: 0 8px 24px rgba($gc-true-black, .25);
+  cursor: pointer;
+  transition: $transition-fast;
+  transition-property: color, background-color, transform;
+
+  &::before,
+  &::after {
+    position: absolute;
+    opacity: 0;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    height: .2rem;
+    background-color: $gc-red;
+    content: "";
+    transition: $transition-fast;
+    transition-property: opacity, transform;
+  }
+
+  &::before {
+    transform: translate3d(-50%, -50%, 0) rotate(0deg);
+  }
+
+  &::after {
+    transform: translate3d(-50%, -50%, 0) rotate(90deg);
+  }
+
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  @at-root .c-chat-sidebar.is-open ~ & {
+    transform: translate3d(190px,0,0);
+
+    &:hover {
+      transform: translate3d(190px,0,0) scale(1.1);
+    }
+  }
+
+  &.is-active {
+    color: transparent;
+    background-color: $gc-black;
+
+    &::before,
+    &::after {
+      opacity: 1;
+    }
+
+    &::before {
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::after {
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+  }
+}

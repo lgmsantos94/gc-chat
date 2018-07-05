@@ -1,23 +1,23 @@
 (function ($) {
 
   // Toggle global-chat
-  $('.global-chat').on('click', '.js-toggle-global-chat', function () {
+  $('.c-global-chat').on('click', '.js-toggle-chat-sidebar', function () {
     $(this).toggleClass('is-active');
-    $('.global-chat').toggleClass('is-active');
+    $('.c-global-chat, .c-chat-sidebar').toggleClass('is-active');
   });
 
 
 
-  // Toggle chat sidebar list
-  $('.chat-sidebar').on('click', '.js-toggle-chat-sidebar-list', function () {
-    $(this).toggleClass('is-active').next('.chat-sidebar__list').slideToggle(250);
+  // Toggle chat sidebar friend-list
+  $('.c-chat-sidebar').on('click', '.js-toggle-chat-friend-list', function () {
+    $(this).toggleClass('is-toggled').next('.c-chat-friend-list').slideToggle(250);
   });
 
 
 
   // Toggle chat sidebar width
-  $('.chat-sidebar').on('click', '.js-toggle-chat-sidebar-width', function () {
-    $('.chat-sidebar').toggleClass('is-open');
+  $('.c-chat-sidebar').on('click', '.js-toggle-chat-sidebar-width', function () {
+    $('.c-chat-sidebar').toggleClass('is-open');
   });
 
 

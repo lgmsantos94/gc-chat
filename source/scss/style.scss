@@ -2,15 +2,9 @@
 // vendor
 // ===============================================
 
-// @import "partials/vendor";
-
-// Easing Sass Functions
-// -----------------------------------------------
+@import "partials/vendor";
 @import "../../node_modules/easing-sass-function/src/easing-var";
 @import "../../node_modules/easing-sass-function/src/easing-function";
-
-// Simple Line Icons
-// -----------------------------------------------
 @import "../../node_modules/simple-line-icons/scss/simple-line-icons";
 
 
@@ -40,6 +34,7 @@
 
 @import "partials/chat-sidebar";
 @import "partials/chat-friend";
+@import "partials/chat-toggle";
 
 
 
