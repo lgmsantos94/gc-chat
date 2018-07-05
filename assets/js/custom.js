@@ -58,7 +58,7 @@
 
   // Close chat dock conversation
   $('.c-chat-dock').on('click', '.js-close-chat-window', function () {
-    $(this).closest('.c-chat-window').fadeOut(125, function () {
+    $(this).closest('.c-chat-window').fadeOut(50, function () {
       $(this).remove();
     });
   });
